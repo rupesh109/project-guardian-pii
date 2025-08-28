@@ -165,7 +165,6 @@ def process_csv(in_path: str, out_path: str):
 
             redacted = mask_record(d, is_pii, standalone_hits, combo_flags)
             redacted_str = json.dumps(redacted, ensure_ascii=False, separators=(",", ": "))
-
             rows_out.append({"record_id": rid, "redacted_data_json": redacted_str, "is_pii": str(is_pii)})
 
     # Write output with exact required header order
